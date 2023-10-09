@@ -2,6 +2,18 @@
 
 Este é um aplicativo de gerenciamento de senhas desenvolvido com Expo Go e React Native. Ele permiete que o usuario possa criar senhas e que elas sejam gerenciadas pelo sistema de guiche.
 
+# Aviso
+
+PARA QUE O PROJETO FUNCIONE CORRETAMENTE, EM CLIENT/NODE_MODULES/EXPO/AppEntry.js precisa está nesse formato (POR PADRAO AO INSTALAR VIRA EM OUTRO FORMATO) 
+
+```js
+import registerRootComponent from 'expo/build/launch/registerRootComponent';
+
+import App from '../../src/app';
+
+registerRootComponent(App);
+```
+
 ## Pré-requisitos
 
 Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em seu sistema:
