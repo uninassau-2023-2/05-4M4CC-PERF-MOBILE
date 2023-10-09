@@ -54,20 +54,6 @@ expo start ou npm start
 
 Este aplicativo utiliza uma API RESTful para armazenar e recuperar senhas. Certifique-se de que o servidor da API esteja em execução e configurado corretamente. Consulte a documentação da API para obter detalhes sobre como configurar e usar a API. Se quiser usar um banco seu você deverá mudar nas configurações do projeto o link (no client), caso venha a usar o default poderá demorar mais que o esperado para rodar a API do banco de dados! (Em torno de 5 a 7 minutos)
 
-## Contribuição
-
-Se você deseja contribuir para este projeto, siga estas etapas:
-
-1. Faça um fork do repositório.
-2. Clone o fork para o seu sistema local.
-3. Crie uma nova branch para suas alterações.
-4. Faça suas alterações e adicione, commit e envie para o seu fork.
-5. Abra um pull request no repositório original.
-
-## Licença
-
-Este projeto está licenciado sob a [Licença MIT](LICENSE) - consulte o arquivo LICENSE para obter mais detalhes.
-
 ## Autores
 
 - Henry Thierry - 01531883 
