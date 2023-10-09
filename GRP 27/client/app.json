@@ -1,0 +1,32 @@
+{
+    "expo": {
+        "name": "Projeto - Mobile",
+        "slug": "Projeto - Mobile",
+        "version": "1.0.0",
+
+        "orientation": "portrait",
+        "userInterfaceStyle": "dark",
+        
+        "splash": {
+            "image": "./assets/ticket.png",
+            "resizeMode": "contain",
+            "backgroundColor": "#000000"
+        },
+
+        "assetBundlePatterns": ["**/*"],
+        "ios": {
+            "supportsTablet": true
+        },
+
+        "android": {
+            "adaptiveIcon": {
+                "foregroundImage": "./assets/ticket.png",
+                "backgroundColor": "#000000"
+            }
+        },
+
+        "web": {
+            "favicon": "./assets/ticket.png"
+        }
+    }
+}
