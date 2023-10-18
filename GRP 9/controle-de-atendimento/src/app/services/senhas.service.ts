@@ -16,7 +16,6 @@ export class SenhasService {
     ['SE']: [],
     ['SG']: [],
   }
-  public senhasarra: string[] = [];
 
   public senhasChamadas: {  
     tipoSenha: string;
@@ -43,9 +42,6 @@ export class SenhasService {
   novaSenha(tipoSenha: string) {
     if (tipoSenha == 'SG') {
       this.somaGeral();
-      if (!this.senhasArray['SG']) {
-        this.senhasArray['SG'] = [];
-      }
       this.inputNovaSenha = 
       this.pegarData() +
         '-' +
@@ -140,6 +136,11 @@ export class SenhasService {
           console.log(this.senhasChamadas)
           return
         }
+        else if (this.senhasArray['SP'] && this.senhasArray['SP'].length > 0) {
+          this.chamarSenhaSP(guiche);
+          console.log(this.senhasChamadas)
+          return
+        }
         else {
           console.log('Não há mais senhas para chamar');
           return
@@ -166,5 +167,5 @@ export class SenhasService {
       return
     }
   }
-  
+
 }
