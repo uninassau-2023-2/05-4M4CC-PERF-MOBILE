@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 3
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 3</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-label>Relatório</ion-label>
+        <ion-item>Senhas emitidas: {{senhasService.senhasTotal}}</ion-item>
+        <ion-item>Senhas Geral: {{senhasService.senhasGeral}}</ion-item>
+        <ion-item>Senhas Prioritárias: {{senhasService.senhasPrior}}</ion-item>
+        <ion-item>Senhas Exame: {{senhasService.senhasExame}}</ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-content style="display: flex; justify-content: center; align-items: center;">
+    <ion-list>
+      <ion-item *ngFor="let item of senhasService.senhasArray; let index">
+        <ion-avatar>
+          <ion-label>{{item[7]}} {{item[8]}}</ion-label>
+        </ion-avatar>  
+        <ion-label>{{ item }}</ion-label>
+        <ion-progress-bar [value]="progress" style="width: 50%;"></ion-progress-bar>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-content>
