@@ -1,10 +1,19 @@
+# Autores
+
+- Carlos Vinicius Barbosa de Santana do Monte 01530125
+- Eduardo Henrique Bezerra dos santos 01530700
+- Ewerton Alexandre de Oliveira Cabral  01531026
+- Henry Thierry - 01531883
+- João Gabriel Candido de melo 01542139
+- João Henrique Leal Ferreira Xavier  01531035
+
 # Projeto Mobile
 
 Este é um aplicativo de gerenciamento de senhas desenvolvido com Expo Go e React Native. Ele permiete que o usuario possa criar senhas e que elas sejam gerenciadas pelo sistema de guiche.
 
 # Aviso
 
-PARA QUE O PROJETO FUNCIONE CORRETAMENTE, EM CLIENT/NODE_MODULES/EXPO/AppEntry.js precisa está nesse formato (POR PADRAO AO INSTALAR VIRA EM OUTRO FORMATO) 
+PARA QUE O PROJETO FUNCIONE CORRETAMENTE, EM CLIENT/NODE_MODULES/EXPO/AppEntry.js precisa está nesse formato (POR PADRAO AO INSTALAR VIRA EM OUTRO FORMATO)
 
 ```js
 import registerRootComponent from 'expo/build/launch/registerRootComponent';
@@ -65,12 +74,3 @@ expo start ou npm start
 ## API RESTful
 
 Este aplicativo utiliza uma API RESTful para armazenar e recuperar senhas. Certifique-se de que o servidor da API esteja em execução e configurado corretamente. Consulte a documentação da API para obter detalhes sobre como configurar e usar a API. Se quiser usar um banco seu você deverá mudar nas configurações do projeto o link (no client), caso venha a usar o default poderá demorar mais que o esperado para rodar a API do banco de dados! (Em torno de 5 a 7 minutos)
-
-## Autores
-
-- Henry Thierry - 01531883 
-- João Gabriel Candido de melo 01542139
-- Eduardo Henrique Bezerra dos santos 01530700
-- João Henrique Leal Ferreira Xavier  01531035
-- Carlos Vinicius Barbosa de Santana do Monte 01530125
-- Ewerton Alexandre de Oliveira Cabral  01531026
