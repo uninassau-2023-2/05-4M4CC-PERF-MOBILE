@@ -40,13 +40,13 @@ export class Tab1Page {
 
       this.pokeAPIService.getPokeAPIService()
       .subscribe((value) => {
-        this.pokemon.name = JSON.parse(JSON.stringify(value))['name']; 
+        this.pokemon.name = JSON.parse(JSON.stringify(value))['name'];
         this.pokemon.front_default = JSON.parse(JSON.stringify(value))['sprites']['front_default'];
-        this.pokemon.abilities = JSON.parse(JSON.stringify(value))['abilities'];  
-        this.pokemon.height = JSON.parse(JSON.stringify(value))['height']; 
+        this.pokemon.abilities = JSON.parse(JSON.stringify(value))['abilities'].length;
+        this.pokemon.height = JSON.parse(JSON.stringify(value))['height'];
         this.pokemon.weight = JSON.parse(JSON.stringify(value))['weight'];
       });
-    
+
 
   }
 }
