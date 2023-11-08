@@ -48,22 +48,22 @@
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title>{{'bulbasaur' | uppercase}}</ion-card-title>
+      <ion-card-title>{{pokemon.nome | uppercase}}</ion-card-title>
       <ion-img
-        alt=""
-        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"  
+        alt="Imagem Pokémon"
+        src={{pokemon.img}}
       ></ion-img>
     </ion-card-header>
     <ion-card-content>
       <ion-list>
         <ion-item>
-          <ion-label>Abilities: 2</ion-label>
+          <ion-label>Abilities: {{pokemon.habilidades}}</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label>Height: 7</ion-label>
+          <ion-label>Height: {{pokemon.altura}}</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label>Weigth: 69</ion-label>
+          <ion-label>Weigth: {{pokemon.peso}}</ion-label>
         </ion-item>
       </ion-list>
     </ion-card-content>

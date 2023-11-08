@@ -10,12 +10,21 @@ import { ViaCEPService } from '../services/via-cep.service';
 })
 export class Tab1Page {
   areaBuscarPokemon: string = '52011210'
+  pokemon: any = {
+    id: '',
+    nome: '',
+    habilidades: '',
+    peso: '',
+    altura: '',
+    img: ''
+  }
   areaBusca: any = {
     bairro: '',
     localidade: '',
     logradouro: '',
     uf: ''
   }
+  
 
 
   constructor(
@@ -33,6 +42,13 @@ export class Tab1Page {
         this.areaBusca.uf = '-' + JSON.parse(JSON.stringify(value))['uf']
       })
     this.pokeAPIService.getPokeAPIService()
+      .subscribe((value) => {
+        this.pokemon.nome = JSON.parse(JSON.stringify(value))['name']
+        this.pokemon.habilidades = JSON.parse(JSON.stringify(value))['abilities'].length
+        this.pokemon.peso = JSON.parse(JSON.stringify(value))['weight']
+        this.pokemon.altura = JSON.parse(JSON.stringify(value))['height']
+        this.pokemon.img = JSON.parse(JSON.stringify(value))['sprites']['other']['dream_world']['front_default']
+      })
   }
 
 }
