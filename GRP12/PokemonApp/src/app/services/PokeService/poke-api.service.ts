@@ -8,9 +8,17 @@ export class PokeAPIService {
 
   constructor(private httpClient: HttpClient) { }
 
-  dadosPokemon: any
+  pokeAbilities: Number = 0
 
   getPokeAPIService(id: number = Math.floor(Math.random() * 100)) {
     return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
+  }
+
+  setAbilities(Abilities: Number) {
+    this.pokeAbilities = Abilities
+  }
+
+  getAbilities(){
+    return this.pokeAbilities
   }
 }
