@@ -55,11 +55,7 @@
     
     <ion-card-content>
       <ion-item>
-        <ion-label>Abilidades: 
-          <span *ngFor="let ability of pokemon.abilities">
-            {{ ability.ability.name }}
-          </span>
-        </ion-label>
+        <ion-label>Habilidades: {{ pokemon.abilities.length }}</ion-label>
       </ion-item>
       <ion-item>
         <ion-label>Altura: {{ pokemon.height / 10 }} m</ion-label>
@@ -68,6 +64,7 @@
         <ion-label>Peso: {{ pokemon.weight / 10 }} kg</ion-label>
       </ion-item>
     </ion-card-content>
+    
     
   </ion-card>
 
