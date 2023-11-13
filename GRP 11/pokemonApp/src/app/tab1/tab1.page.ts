@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { PokeAPIService } from '../services/poke-api.service';
 import { ViaCEPService } from '../services/via-cep.service';
-
+import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -29,7 +30,9 @@ export class Tab1Page {
 
   constructor(
     private pokeAPIService: PokeAPIService,
-    private viaCEPService: ViaCEPService
+    private viaCEPService: ViaCEPService,
+    private navCtrl: NavController,
+    private router: Router
   ) {}
 
 
@@ -49,6 +52,7 @@ export class Tab1Page {
         this.pokemon.altura = JSON.parse(JSON.stringify(value))['height']
         this.pokemon.img = JSON.parse(JSON.stringify(value))['sprites']['other']['dream_world']['front_default']
       })
+      this.pokeAPIService.setAbilities(Number(this.pokemon.habilidades))
   }
 
 }
