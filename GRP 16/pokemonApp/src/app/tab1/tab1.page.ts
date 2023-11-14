@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PokeApiService } from '../services/poke-api.service';
 import { ViaCepService } from '../services/via-cep.service';
+import { PokemonStateService } from '../services/pokemon-state.service';
 
 interface Pokemon {
   name: string;
@@ -51,7 +52,8 @@ export class Tab1Page {
 
   constructor(
     private pokeApiService: PokeApiService,
-    private viaCepService: ViaCepService
+    private viaCepService: ViaCepService,
+    private pokemonStateService: PokemonStateService
   ) {}
 
   buscarPokemon() {
@@ -64,6 +66,7 @@ export class Tab1Page {
     });
     this.pokeApiService.getPokeApiService().subscribe((pokemon: any) => {
       this.pokemonModel = pokemon;
+      this.pokemonStateService.setUserPokemon(pokemon);
     });
   }
 }
