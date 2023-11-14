@@ -17,7 +17,7 @@ export class Tab2Page {
     altura: '',
     img: ''
   }
-  pokeAbilities: Number = 0
+  userPokemonAbilities: Number = 0
 
   result: any = {
     name: ''
@@ -40,20 +40,7 @@ export class Tab2Page {
         this.pokemonAdv.altura = JSON.parse(JSON.stringify(value))['height']
         this.pokemonAdv.img = JSON.parse(JSON.stringify(value))['sprites']['other']['dream_world']['front_default']
       })
-      this.battleResult()
+      this.userPokemonAbilities = this.pokeAPIService.getAbilities()
   }
 
-  battleResult(){
-    console.log(this.pokeAPIService.getAbilities(), this.pokemonAdv.habilidades)
-    const pokemonAbilities = this.pokeAPIService.getAbilities();
-    const PokemonAdvAbilities = this.pokemonAdv.habilidades
-
-    if (pokemonAbilities < PokemonAdvAbilities) {
-      this.result.name = 'Ganhou';
-    } else if (pokemonAbilities === PokemonAdvAbilities) {
-      this.result.name = 'Empate';
-    } else {
-      this.result.name = 'Perdeu';
-    }
-  }
 }

@@ -10,7 +10,9 @@
   <ion-card *ngIf="pokemonAdv.nome != ''">
     <ion-card-header>
       <ion-card-title>{{pokemonAdv.nome | uppercase}}</ion-card-title>
-      <ion-card-title [ngStyle]="{ 'color': (result.name === 'Empate' ? 'yellow' : (result.name === 'Ganhou' ? 'red' : 'green')) }" >{{ pokemonAdv.name }} {{ result.name }}</ion-card-title>
+      <ion-card-subtitle class="vitoria" *ngIf="pokemonAdv.habilidades > userPokemonAbilities">Ganhou</ion-card-subtitle>
+      <ion-card-subtitle class="empate" *ngIf="pokemonAdv.habilidades == userPokemonAbilities">Empatou</ion-card-subtitle>
+      <ion-card-subtitle class="derrota" *ngIf="pokemonAdv.habilidades < userPokemonAbilities">Perdeu</ion-card-subtitle>
       <ion-img alt="" src="{{pokemonAdv.img}}"></ion-img>
     </ion-card-header>
     <ion-card-content>

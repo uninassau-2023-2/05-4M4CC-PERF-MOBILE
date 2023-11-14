@@ -51,8 +51,10 @@ export class Tab1Page {
         this.pokemon.peso = JSON.parse(JSON.stringify(value))['weight']
         this.pokemon.altura = JSON.parse(JSON.stringify(value))['height']
         this.pokemon.img = JSON.parse(JSON.stringify(value))['sprites']['other']['dream_world']['front_default']
+
+        this.pokeAPIService.setAbilities(Number(this.pokemon.habilidades))
       })
-      this.pokeAPIService.setAbilities(Number(this.pokemon.habilidades))
+      
   }
 
 }
