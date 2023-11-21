@@ -6,3 +6,7 @@
 * Cauã Victor - 01588771
 * Eliabe wesley - 01571655
 * Amhos Cezar - 01589117
+
+## 2023-11-21
+
+* Desenvolvido até a lista 6
