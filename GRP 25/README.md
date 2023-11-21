@@ -7,3 +7,7 @@
 * Robson Nunes - 24008712
 * Wollace Martins - 01554427
 * Fabiano Vandré -  01529527
+
+## 2023-11-21
+
+* Desenvolvido parcialmente até a lista 6
