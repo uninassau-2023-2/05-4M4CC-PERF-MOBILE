@@ -17,7 +17,9 @@ export class Tab1Page {
     habilidades: '',
     peso: '',
     altura: '',
-    img: ''
+    img: '',
+    results: [0, 0, 0]
+
   }
   areaBusca: any = {
     bairro: '',
@@ -26,7 +28,6 @@ export class Tab1Page {
     uf: ''
   }
   
-
 
   constructor(
     private pokeAPIService: PokeAPIService,
@@ -53,6 +54,8 @@ export class Tab1Page {
         this.pokemon.img = JSON.parse(JSON.stringify(value))['sprites']['other']['dream_world']['front_default']
 
         this.pokeAPIService.setAbilities(Number(this.pokemon.habilidades))
+        this.pokeAPIService.pokemonsCaptureds.push(structuredClone(this.pokemon))
+        this.pokeAPIService.pokemonAtual+=1
       })
       
   }

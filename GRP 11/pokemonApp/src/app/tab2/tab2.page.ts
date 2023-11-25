@@ -26,7 +26,12 @@ export class Tab2Page {
     public photoService: PhotoService,
     private pokeAPIService: PokeAPIService,
     public navCtrl: NavController
-    ) { this.getPokemonAdv() }
+    ) {  }
+
+  ionViewDidEnter(){
+    this.getPokemonAdv()
+    setTimeout(()=>this.getResult(), 5000)
+  }
 
   AddPhotoToGallery() {
     this.photoService.addNewToGallery();
@@ -41,6 +46,22 @@ export class Tab2Page {
         this.pokemonAdv.img = JSON.parse(JSON.stringify(value))['sprites']['other']['dream_world']['front_default']
       })
       this.userPokemonAbilities = this.pokeAPIService.getAbilities()
+
+  }
+
+  getResult(){
+    if(this.userPokemonAbilities>this.pokemonAdv.habilidades){
+      this.pokeAPIService.pokemonsCaptureds[this.pokeAPIService.pokemonAtual].results[0] += 1  
+      console.log('Ganhou')
+    }
+    else if(this.userPokemonAbilities==this.pokemonAdv.habilidades){
+      this.pokeAPIService.pokemonsCaptureds[this.pokeAPIService.pokemonAtual].results[1] += 1  
+      console.log('Empatou')
+    }
+    else {
+      this.pokeAPIService.pokemonsCaptureds[this.pokeAPIService.pokemonAtual].results[2] += 1  
+      console.log('Perdeu')
+    }
   }
 
 }
