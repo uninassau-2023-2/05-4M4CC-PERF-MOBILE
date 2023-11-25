@@ -51,16 +51,13 @@ export class Tab2Page {
 
   getResult(){
     if(this.userPokemonAbilities>this.pokemonAdv.habilidades){
-      this.pokeAPIService.pokemonsCaptureds[this.pokeAPIService.pokemonAtual].results[0] += 1  
-      console.log('Ganhou')
+      this.pokeAPIService.pokemonsCaptureds[this.pokeAPIService.pokemonAtual].results[0] += 1
     }
     else if(this.userPokemonAbilities==this.pokemonAdv.habilidades){
-      this.pokeAPIService.pokemonsCaptureds[this.pokeAPIService.pokemonAtual].results[1] += 1  
-      console.log('Empatou')
+      this.pokeAPIService.pokemonsCaptureds[this.pokeAPIService.pokemonAtual].results[1] += 1
     }
     else {
-      this.pokeAPIService.pokemonsCaptureds[this.pokeAPIService.pokemonAtual].results[2] += 1  
-      console.log('Perdeu')
+      this.pokeAPIService.pokemonsCaptureds[this.pokeAPIService.pokemonAtual].results[2] += 1 
     }
   }
 
