@@ -1,0 +1,19 @@
+.ganhou {
+    color: #F50A02;
+}
+
+.empate {
+    color: #F5B705;
+}
+
+.perdeu {
+    color: #11F518;
+}
+
+.empate,
+.ganhou,
+.perdeu,
+ion-card-title {
+    font-size: 2rem;
+    font-weight: bold;
+}

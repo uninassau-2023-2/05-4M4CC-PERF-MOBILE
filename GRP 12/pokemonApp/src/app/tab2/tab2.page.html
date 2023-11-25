@@ -1,0 +1,29 @@
+<ion-card *ngIf="pokemonInimigo.nome != ''">
+  <ion-card-header>
+    <ion-card-title>{{pokemonInimigo.nome | uppercase}}</ion-card-title>
+    <ion-card-subtitle class="ganhou" *ngIf="pokemonInimigo.habilidades > pokeAbilities">Ganhou</ion-card-subtitle>
+    <ion-card-subtitle class="empate" *ngIf="pokemonInimigo.habilidades == pokeAbilities">Empate</ion-card-subtitle>
+    <ion-card-subtitle class="perdeu" *ngIf="pokemonInimigo.habilidades < pokeAbilities">Perdeu</ion-card-subtitle>
+    <ion-img alt="" src="{{pokemonInimigo.imagem}}"></ion-img>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-label>Abilities: {{pokemonInimigo.habilidades}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Heigth: {{pokemonInimigo.altura}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Weigth: {{pokemonInimigo.peso}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+
+
+<ion-fab vertical="bottom" horizontal="center" slot="fixed">
+  <ion-fab-button (click)="addPhotoToGallery()">
+    <ion-icon name="camera"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
