@@ -6,19 +6,31 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PokeAPIService {
 
-  constructor(private httpClient: HttpClient) { }
+  public pokemonList: any[] = []
 
-  pokeAbilities: Number = 0
+  pokemon1: any
+
+  constructor(private httpClient: HttpClient) { }
 
   getPokeAPIService(id: number = Math.floor(Math.random() * 100)) {
     return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
   }
 
-  setAbilities(Abilities: Number) {
-    this.pokeAbilities = Abilities
+
+  setPokemon1(pokemon: any) {
+    this.pokemon1 = pokemon
   }
 
-  getAbilities(){
-    return this.pokeAbilities
+  getPokemon1() {
+    return this.pokemon1
+  }
+
+  addPokemonToList(pokemon: any) {
+    const novoPokemon = { ...pokemon }; 
+    this.pokemonList.push(novoPokemon);
+  }
+
+  getPokemonList() {
+    return this.pokemonList
   }
 }

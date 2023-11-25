@@ -1,9 +1,9 @@
 <ion-card *ngIf="pokemonInimigo.nome != ''">
   <ion-card-header>
     <ion-card-title>{{pokemonInimigo.nome | uppercase}}</ion-card-title>
-    <ion-card-subtitle class="ganhou" *ngIf="pokemonInimigo.habilidades > pokeAbilities">Ganhou</ion-card-subtitle>
-    <ion-card-subtitle class="empate" *ngIf="pokemonInimigo.habilidades == pokeAbilities">Empate</ion-card-subtitle>
-    <ion-card-subtitle class="perdeu" *ngIf="pokemonInimigo.habilidades < pokeAbilities">Perdeu</ion-card-subtitle>
+    <ion-card-subtitle class="ganhou" *ngIf="resultado == 'ganhou'">Ganhou</ion-card-subtitle>
+    <ion-card-subtitle class="empate" *ngIf="resultado == 'empate'">Empate</ion-card-subtitle>
+    <ion-card-subtitle class="perdeu" *ngIf="resultado == 'perdeu'">Perdeu</ion-card-subtitle>
     <ion-img alt="" src="{{pokemonInimigo.imagem}}"></ion-img>
   </ion-card-header>
   <ion-card-content>

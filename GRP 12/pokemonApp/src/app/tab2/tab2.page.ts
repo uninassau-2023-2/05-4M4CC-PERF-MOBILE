@@ -10,9 +10,8 @@ import { PokeAPIService } from '../services/PokeService/poke-api.service';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-
-  pokemon: any
-  pokeAbilities: Number = 0
+  resultado: string = ''
+  pokemonI: any
   pokemonInimigo: any = {
     nome: '',
     imagem: '',
@@ -21,7 +20,9 @@ export class Tab2Page {
     peso: '',
   }
 
-  constructor(public photoService: PhotoService, public navController: NavController, private pokeAPI: PokeAPIService) { }
+  dadosPokemon: any
+
+  constructor(public photoService: PhotoService, public navController: NavController, private pokeAPI: PokeAPIService,) { }
 
   addPhotoToGallery() {
     this.photoService.addNewToGallery()
@@ -29,14 +30,24 @@ export class Tab2Page {
 
   ionViewDidEnter() {
     this.pokeAPI.getPokeAPIService().subscribe((data) => {
-      this.pokemon = data
-      this.pokemonInimigo.nome = this.pokemon.name
-      this.pokemonInimigo.imagem = this.pokemon.sprites.other.dream_world.front_default
-      this.pokemonInimigo.habilidades = this.pokemon.abilities.length
-      this.pokemonInimigo.altura = (Number(this.pokemon.height) / 10)
-      this.pokemonInimigo.peso = (Number(this.pokemon.weight) / 10)
-    })
+      this.pokemonI = data
+      this.pokemonInimigo.nome = this.pokemonI.name
+      this.pokemonInimigo.imagem = this.pokemonI.sprites.other.dream_world.front_default
+      this.pokemonInimigo.habilidades = this.pokemonI.abilities.length
+      this.pokemonInimigo.altura = (Number(this.pokemonI.height) / 10)
+      this.pokemonInimigo.peso = (Number(this.pokemonI.weight) / 10)
 
-    this.pokeAbilities = this.pokeAPI.getAbilities()
+
+      if (this.pokeAPI.getPokemon1().habilidades > this.pokemonInimigo.habilidades) {
+        this.pokeAPI.getPokemon1().vitorias++
+        this.resultado = "perdeu"
+      } else if (this.pokeAPI.getPokemon1().habilidades == this.pokemonInimigo.habilidades) {
+        this.pokeAPI.getPokemon1().empates++
+        this.resultado = "empate"
+      } else if (this.pokeAPI.getPokemon1().habilidades < this.pokemonInimigo.habilidades) {
+        this.pokeAPI.getPokemon1().derrotas++
+        this.resultado = "ganhou"
+      }
+    })
   }
 }

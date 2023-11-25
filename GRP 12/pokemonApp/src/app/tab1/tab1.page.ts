@@ -26,7 +26,12 @@ export class Tab1Page {
     habilidades: '',
     altura: '',
     peso: '',
+    vitorias: 0,
+    empates: 0,
+    derrotas: 0
   }
+
+  pokemonAnterior: any = this.dadosPokemon
 
   constructor(
     private pokeService: PokeAPIService,
@@ -48,10 +53,12 @@ export class Tab1Page {
       this.dadosPokemon.habilidades = this.pokemon.abilities.length
       this.dadosPokemon.altura = (Number(this.pokemon.height) / 10)
       this.dadosPokemon.peso = (Number(this.pokemon.weight) / 10)
-      
-      this.pokeService.setAbilities(this.dadosPokemon.habilidades)
+      this.dadosPokemon.vitorias = 0
+      this.dadosPokemon.empates = 0
+      this.dadosPokemon.derrotas = 0
     })
 
+    this.pokeService.addPokemonToList(this.dadosPokemon)
+    this.pokeService.setPokemon1(this.dadosPokemon)
   }
-
 }
