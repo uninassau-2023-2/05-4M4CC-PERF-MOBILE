@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true">
   <ion-card *ngIf="randomPokemon">
     <ion-card-header>
-      <ion-card-title [ngStyle]="{ 'color': (battleResultText === 'Empate' ? 'yellow' : (battleResultText === 'Ganhou' ? 'green' : 'red')) }" >{{ randomPokemon.name }} - {{ battleResultText }}</ion-card-title>
+      <ion-card-title [ngStyle]="{ 'color': (battleResultText === 'Empate' ? 'yellow' : (battleResultText === 'Ganhou' ? 'green' : 'red')) }">{{ randomPokemon.name }} - {{ battleResultText }}</ion-card-title>
     </ion-card-header>
     
     <ion-card-content>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PokemonStateService } from './../services/pokemon-state.service';
 
 @Component({
   selector: 'app-tab3',
@@ -6,7 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  battleStats: { won: number; lost: number; draw: number };
+  userPokemon: any;
 
-  constructor() {}
-
+  constructor(private pokemonStateService: PokemonStateService) {
+    this.battleStats = this.pokemonStateService.getBattleStats();
+    this.userPokemon = this.pokemonStateService.getUserPokemon();
+  }
 }
