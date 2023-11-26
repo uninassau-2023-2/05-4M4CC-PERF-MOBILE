@@ -1,6 +1,5 @@
 # Alunos
 
-* Amanda Alves - 01535268
 * Emerson Aquino - 01501853
 * Eduardo Mendes - 01504209
 * João Arthur - 01558846
