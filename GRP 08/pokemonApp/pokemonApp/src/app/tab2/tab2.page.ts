@@ -38,24 +38,24 @@ export class Tab2Page {
       });
   }
 
-  evaluateBattle() {
-    const userPokemonAbilities = this.getUserPokemonAbilities();
-    const opponentPokemonAbilities = this.randomPokemon.abilities.length;
+evaluateBattle() {
+  const userPokemonAbilities = this.getUserPokemonAbilities();
+  const opponentPokemonAbilities = this.randomPokemon.abilities.length;
 
-    if (userPokemonAbilities === opponentPokemonAbilities) {
-      this.battleResultColor = 'yellow';
-      this.battleResultText = 'Empate';
-      this.pokemonStateService.updateBattleResult('draw');
-    } else if (userPokemonAbilities > opponentPokemonAbilities) {
-      this.battleResultColor = 'green';
-      this.battleResultText = 'Ganhou';
-      this.pokemonStateService.updateBattleResult('won');
-    } else {
-      this.battleResultColor = 'red';
-      this.battleResultText = 'Perdeu';
-      this.pokemonStateService.updateBattleResult('lost');
-    }
+  if (userPokemonAbilities === opponentPokemonAbilities) {
+    this.battleResultColor = 'yellow';
+    this.battleResultText = 'Empate';
+    this.pokemonStateService.updateBattleResult('draw');
+  } else if (userPokemonAbilities > opponentPokemonAbilities) {
+    this.battleResultColor = 'green';
+    this.battleResultText = 'Ganhou';
+    this.pokemonStateService.updateBattleResult('won');
+  } else {
+    this.battleResultColor = 'red';
+    this.battleResultText = 'Perdeu';
+    this.pokemonStateService.updateBattleResult('lost');
   }
+}
 
   getUserPokemonAbilities(): number {
     return this.pokemonStateService.getPokemonAbilities(); 

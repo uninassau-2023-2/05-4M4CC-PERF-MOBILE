@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Tab 3
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      Estatísticas de Batalha para {{ userPokemon.name | uppercase }}
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Vitórias:</ion-label>
+          <ion-badge color="success">{{ battleStats.won }}</ion-badge>
+        </ion-item>
+        <ion-item>
+          <ion-label>Derrotas:</ion-label>
+          <ion-badge color="danger">{{ battleStats.lost }}</ion-badge>
+        </ion-item>
+        <ion-item>
+          <ion-label>Empates:</ion-label>
+          <ion-badge color="warning">{{ battleStats.draw }}</ion-badge>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ userPokemon.name | uppercase }}</ion-card-title>
+      <ion-img alt="Foto do Pokémon" [src]="userPokemon.front_default"></ion-img>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

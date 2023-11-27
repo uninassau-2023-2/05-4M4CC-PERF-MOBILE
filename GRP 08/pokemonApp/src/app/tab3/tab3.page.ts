@@ -7,11 +7,15 @@ import { PokemonStateService } from './../services/pokemon-state.service';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
-  battleStats: { won: number; lost: number; draw: number };
-  userPokemon: any;
+  userPokemonList: any[] = [];
 
-  constructor(private pokemonStateService: PokemonStateService) {
-    this.battleStats = this.pokemonStateService.getBattleStats();
-    this.userPokemon = this.pokemonStateService.getUserPokemon();
+  constructor(private pokemonStateService: PokemonStateService) {}
+
+  ionViewWillEnter() {
+    this.userPokemonList = this.pokemonStateService.getUserPokemonList();
+  }
+
+  getBattleStats(pokemon: any) {
+    return this.pokemonStateService.getBattleStats();
   }
 }

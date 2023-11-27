@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { ViaCEPService } from './../services/via-cep.service';
 import { PokeAPIService } from './../services/poke-api.service';
-import { PokemonStateService } from './../services/pokemon-state.service';
+import { ViaCEPService } from './../services/via-cep.service';
+import { PokemonStateService } from './../services/pokemon-state.service'; // Importando o serviço
 
 @Component({
   selector: 'app-page',
@@ -22,14 +22,13 @@ export class Tab1Page {
     front_default: '',
     abilities: [],
     height: '',
-    weight: '',
-    battles: { won: 0, lost: 0, draw: 0 } // Adicionando as informações de batalha
+    weight: ''
   };
 
   constructor(
-    private viaCEPService: ViaCEPService,
     private pokeAPIService: PokeAPIService,
-    private pokemonStateService: PokemonStateService
+    private viaCEPService: ViaCEPService,
+    private pokemonStateService: PokemonStateService // Adicionando o serviço
   ) {}
 
   buscarPokemon() {
@@ -49,9 +48,6 @@ export class Tab1Page {
 
       // Adicionando os dados do Pokémon ao serviço PokemonStateService
       this.pokemonStateService.setUserPokemon(this.pokemon);
-
-      // Adicionando o Pokémon à lista do usuário
-      this.pokemonStateService.addUserPokemon(this.pokemon);
     });
   }
 }
